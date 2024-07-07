@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>e习堂</title>
+    <!-- 下面做这个是小图标 -->
+    <link rel="icon" href="images/2.ico">
+    <link rel="stylesheet" href="css/iconfont.css">
+    <link rel="stylesheet" href="css/wangke2.css">
+    <link rel="stylesheet" href="css/web-bar.css">
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/userName.js"></script>
+    <script>
+        $(function () {
+            //获取浏览器地址，拆分出id
+            var url = window.location.href;
+            //按照=拆分会查分出两部分，最后一部分就是id
+            var str = url.split("=");
+            var id = parseInt(str[1]);
+            console.log(id);
+            $.ajax({
+                url: '/e_xitang/VideoDetail_message?id=' + id,
+                type: 'get',
+                success: function (data) {
+                    var result = eval("(" + data + ")");
+                    $('.play').append(
+                        '<p id="video_tittle">'+result.data.videoName+'</p>\n' +
+                        '            <video src="wangke_videos/'+result.data.id+'.mp4" autoplay="autoplay"\n' +
+                        '                   controls="controls">浏览器不支持video标签\n' +
+                        '            </video>'
+                    )
+                    if(data!=null){
+                        updatevideo()
+                    }
+                }
+            })
+        })
+        function updatevideo(){
+            var username = $("#user-name-label").text();
+            var videoname =$("#video_tittle").text();
+            $.ajax({
+                url:'/e_xitang/WangkeWatchedMessage',
+                type:'post',
+                data:{
+                    "username":username,
+                    "videoname":videoname,
+                }
+            })
+        }
+    </script>
+</head>
+
+<body>
+<!-- 导航条开始 -->
+<div class="nav">
+    <div class="wrap">
+        <div class="logo"></div>
+        <div id="bar-kong1"></div>
+        <div id="cn">乡村职业教育公益平台</div>
+        <div id="bar-kong2"></div>
+        <div class="nav-bar">
+            <ul>
+                <li><a href="index.html" onmouseover="tab(0);">首页</a></li>
+                <li><a href="qiye1.html" onmouseover="tab(1);">企业</a></li>
+                <li><a href="wangke1.html" class="active" onmouseover="tab(2);">网课</a></li>
+                <li><a href="tushuguan1.html?id=1000" onmouseover="tab(3);">图书</a></li>
+            </ul>
+        </div>
+        <div class="student">
+            <a href="#">
+                <img src="images\touxiang.png" alt="">
+            </a>
+            <div class="inform">
+                <div class="top">
+                    <img src="images\touxiang.png" alt="">
+                    <div class="username" id="user-name-label">
+                        未命名
+                    </div>
+                </div>
+
+                <div class="function">
+                    <a href="#">
+                        <div>学习历史</div>
+                    </a>
+                    <a href="#">
+                        <div>我的信息</div>
+                    </a>
+                    <a href="#">
+                        <div>我的收藏</div>
+                    </a>
+                    <a href="#">
+                        <div>系统通知</div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<!-- 导航条结束 -->
+<!-- 从这里开始写  -->
+<div class="up">
+    <div class="video">
+        <div class="play">
+
+        </div>
+    </div>
+    <div class="select">
+        <div class="kuang">
+            <div class="kong"></div>
+            <div class="dropdown">
+                <button class="dropbtn">课程选择 (下拉选择)</button>
+                <div class="dropdown-content">
+                    <a href="#">第1节</a>
+                    <a href="#">第2节</a>
+                    <a href="#">第3节</a>
+                    <a href="#">第4节</a>
+                    <a href="#">第5节</a>
+                    <a href="#">第6节</a>
+                    <a href="#">第7节</a>
+                    <a href="#">第8节</a>
+                    <a href="#">第9节</a>
+                    <a href="#">第10节</a>
+                </div>
+            </div>
+            <div class="AD">
+                <img src="images\ad2.png" alt="">
+            </div>
+        </div>
+    </div>
+</div>
+<script src="js/style.js"></script>
+</body>
+
+</html>

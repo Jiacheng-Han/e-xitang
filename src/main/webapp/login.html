@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>e习堂</title>
+    <!-- 下面做这个是小图标 -->
+    <link rel="icon" href="images/2.ico">
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="css/login.css">
+    <script>
+        $(function (){
+            $('.btn').click(function (){
+                $.ajax({
+                    url:'/e_xitang/log',
+                    type:'post',
+                    data:$('form').serialize(),
+                    success:function (data){
+                        var result = eval("("+data+")");
+                        if(result.code==400) {
+                            $('.error').text(result.message);
+                        }
+                        else if(result.code==200){
+                            window.location.replace("index.html");
+                        }
+                    }
+                })
+            })
+        })
+    </script>
+</head>
+<body>
+    <div class="reg">
+        <form>
+            <div class="input">
+                用户名： <input type="text" name="username"><br>
+                密&nbsp;&nbsp; 码：<input class="password" type="password" name="password"><br>
+                <span class="error" style="color: red;display: block;font-size: 12px"></span>
+                <input class="btn" type="button" value="登录">
+                <a href="reg.html">注册账号</a>
+            </div>
+        </form>
+    </div>
+
+</body>
+</html>
+
+
+

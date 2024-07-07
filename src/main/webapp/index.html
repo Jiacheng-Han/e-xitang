@@ -1,0 +1,967 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>e习堂</title>
+    <!-- 下面做这个是小图标 -->
+    <link rel="icon" href="images/2.ico">
+    <link rel="stylesheet" href="qiye/iconfont.css">
+    <link rel="stylesheet" href="css/web-bar.css">
+    <link rel="stylesheet" href="css/index.css">
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function (){
+            //获取用户信息
+            $.ajax({
+                url:'/e_xitang/usermessage',
+                type:'post',
+                success:function (data){
+                    var result = eval("("+data+")");
+                    if(result.code==400) {
+                        window.location.replace("login.html");
+                    }
+                    else if(result.code==200){
+                        $('#user-name-label').text(result.message);
+                        recommend1();
+                        recommend2();
+                    }
+                }
+            })
+        })
+        function recommend2() {
+            var username = $("#user-name-label").text();
+            //显示6本书籍
+            $.ajax({
+                url: '/e_xitang/bookrecommendmessage',
+                type: 'post',
+                data: {
+                    "username": username,
+                },
+                success: function (data) {
+                    var result = eval("(" + data + ")");
+                    for (var i = 0; i < 6; i++) {
+                        $(".book").append('<div><a href="tushuguan2.html?id='+result.data[i].id+'">\n' +
+                            '                        <img src=' +
+                            result.data[i].bookCoverUrl +
+                            ' alt="">\n' +
+                            '                        <div>' +
+                            result.data[i].bookName +
+                            '</div>\n' +
+                            '                    </a></div>'
+                        )
+                    }
+                }
+            })
+        }
+        function recommend1(){
+            var username = $("#user-name-label").text();
+            //显示3个课程
+            $.ajax({
+                url: '/e_xitang/videomessage',
+                type: 'post',data:{
+                    "username":username,
+                },
+                success: function (data) {
+                    var result = eval("(" + data + ")");
+                    for (var i = 0; i < 3; i++) {
+                        $(".wangke").append('<div><a href="wangke2.html?id=' +
+                            result.data[i].id +
+                            '">\n' +
+                            '<img src="wangke_videos/' +
+                            result.data[i].id +
+                            '.jpg" alt="">\n' +
+                            '                <div>' +
+                            result.data[i].videoName +
+                            '</div>\n' +
+                            '            </a></div>'
+                        )
+                    }
+                }
+            })
+        }
+    </script>
+</head>
+
+<body>
+<!-- 导航条开始 -->
+<div class="nav">
+    <div class="wrap">
+        <div class="logo"></div>
+        <div id="bar-kong1"></div>
+        <div id="cn">乡村职业教育公益平台</div>
+        <div id="bar-kong2"></div>
+        <div class="nav-bar">
+            <ul>
+                <li><a href="index.html" class="active" onmouseover="tab(0);">首页</a></li>
+                <li><a href="qiye1.html" onmouseover="tab(1);">企业</a></li>
+                <li><a href="wangke1.html" onmouseover="tab(2);">网课</a></li>
+                <li><a href="tushuguan1.html?id=1000" onmouseover="tab(3);">图书</a></li>
+            </ul>
+        </div>
+        <div class="student">
+            <a href="#">
+                <img src="images\touxiang.png" alt="">
+            </a>
+            <div class="inform">
+                <div class="top">
+                    <img src="images\touxiang.png" alt="">
+                    <div class="username" id="user-name-label">
+                        未命名
+                    </div>
+                </div>
+
+                <div class="function">
+                    <a href="#"><div>学习历史</div></a>
+                    <a href="#"><div>我的信息</div></a>
+                    <a href="#"><div>我的收藏</div></a>
+                    <a href="#"><div>系统通知</div></a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<!-- 导航条结束 -->
+<div class="pic">
+    <img src="images\21BBCE5E89AE244C96C604F790AD9B83.png" alt="">
+</div>
+<div class="content">
+    <div class="main">
+        <div class="tag">
+            <div class="iconfont"><a href="qiye1.html">企业招聘&#xe637;</a></div>
+        </div>
+        <div class="big-box">
+            <div class="box1">
+                <ul>
+                    <li>
+                        <div class="exist">
+                            <span>运营</span>
+                            <a href="qiye2.html?id=10101">新媒体运营</a>
+                            <a href="qiye2.html?id=10102">售前客服</a>
+                            <a href="qiye2.html?id=10103">品牌公关</a>
+                            <div class="iconfont">&#xe637;</div>
+                        </div>
+                        <div class="hide hide1">
+                            <div class="title">
+                                <span>运营</span>
+                            </div>
+                            <div class="box">
+                                <div class="concent">
+                                    <div>
+                                        <div class="small-title">运营</div>
+                                        <div>
+                                            <a href="qiye2.html?id=10104">淘宝运营</a>
+                                            <a href="qiye2.html?id=10105">天猫运营</a>
+                                            <a href="qiye2.html?id=10106">京东运营</a>
+                                            <a href="qiye2.html?id=10107">拼多多运营</a>
+                                            <a href="qiye2.html?id=10108">亚马逊运营</a>
+                                            <a href="qiye2.html?id=10109">速卖通运营</a>
+                                            <a href="qiye2.html?id=10110">阿里国际站运营</a>
+                                            <a href="qiye2.html?id=10111">亚马逊产品开发</a>
+                                            <a href="qiye2.html?id=10112">运营</a>
+                                            <a href="qiye2.html?id=10113">用户运营</a>
+                                            <a href="qiye2.html?id=10114">产品运营</a>
+                                            <a href="qiye2.html?id=10115">数据/策略运营</a>
+                                            <a href="qiye2.html?id=10116">内容运营</a>
+                                            <a href="qiye2.html?id=10117">活动运营</a>
+                                            <a href="qiye2.html?id=10118">商家运营</a>
+                                            <a href="qiye2.html?id=10119">品牌运营</a>
+                                            <a href="qiye2.html?id=10120">游戏运营</a>
+                                            <a href="qiye2.html?id=10121">网站运营</a>
+                                            <a href="qiye2.html?id=10122">新媒体运营</a>
+                                            <a href="qiye2.html?id=10123">社区运营</a>
+                                            <a href="qiye2.html?id=10124">微信运营</a>
+                                            <a href="qiye2.html?id=10125">线下拓展运营</a>
+                                            <a href="qiye2.html?id=10126">国内电商运营</a>
+                                            <a href="qiye2.html?id=10127">运营助理/专员</a>
+                                            <a href="qiye2.html?id=10128">内容审核</a>
+                                            <a href="qiye2.html?id=10129">数据标注/AI训练师</a>
+                                            <a href="qiye2.html?id=10130">直播运营</a>
+                                            <a href="qiye2.html?id=10131">车辆运营</a>
+                                            <a href="qiye2.html?id=10132">跨境电商运营</a>
+                                            <a href="qiye2.html?id=10133">视频运营</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="concent">
+                                    <div>
+                                        <div class="small-title">编辑</div>
+                                        <div>
+                                            <a href="qiye2.html?id=10134">编辑</a>
+                                            <a href="qiye2.html?id=10135">主编/副主编</a>
+                                            <a href="qiye2.html?id=10136">文案编辑</a>
+                                            <a href="qiye2.html?id=10137">网站编辑</a>
+                                            <a href="qiye2.html?id=10138">采编</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="concent">
+                                    <div>
+                                        <div class="small-title">客服</div>
+                                        <div>
+                                            <a href="qiye2.html?id=10139">售后客服</a>
+                                            <a href="qiye2.html?id=10140">网络客服</a>
+                                            <a href="qiye2.html?id=10141">客服经理</a>
+                                            <a href="qiye2.html?id=10142">客服专员</a>
+                                            <a href="qiye2.html?id=10143">客服主管</a>
+                                            <a href="qiye2.html?id=10144">电话客服</a>
+                                            <a href="qiye2.html?id=10145">咨询热线/呼叫中心客服</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="concent last">
+                                    <div>
+                                        <div class="small-title">其他运营职位</div>
+                                        <div>
+                                            <a href="qiye2.html?id=10146">其他运营职位</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="exist">
+                            <span>产品</span>
+                            <a href="qiye2.html?id=10201">产品经理</a>
+                            <a href="qiye2.html?id=10202">高级产品管理岗</a>
+                            <a href="qiye2.html?id=10203">数据产品经理</a>
+                            <div class="iconfont">&#xe637;</div>
+                        </div>
+                        <div class="hide hide2">
+                            <div class="title">
+                                <span>产品</span>
+                            </div>
+                            <div class="box">
+                                <div class="concent">
+                                    <div>
+                                        <div class="small-title">产品经理</div>
+                                        <div>
+                                            <a href="qiye2.html?id=10204">AI产品经理</a>
+                                            <a href="qiye2.html?id=10205">化妆品产品经理</a>
+                                            <a href="qiye2.html?id=10206">产品经理</a>
+                                            <a href="qiye2.html?id=10207">移动产品经理</a>
+                                            <a href="qiye2.html?id=10208">产品助力</a>
+                                            <a href="qiye2.html?id=10209">数据产品经理</a>
+                                            <a href="qiye2.html?id=10210">电商产品经理</a>
+                                            <a href="qiye2.html?id=10211">游戏策划</a>
+                                            <a href="qiye2.html?id=10212">产品专员</a>
+                                            <a href="qiye2.html?id=10213">硬件产品经理</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="concent">
+                                    <div>
+                                        <div class="small-title">高端产品职位</div>
+                                        <div>
+                                            <a href="qiye2.html?id=10214">高级产品管理岗</a>
+                                            <a href="qiye2.html?id=10215">游戏制作人</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="concent last">
+                                    <div>
+                                        <div class="small-title">其他产品岗位</div>
+                                        <div>
+                                            <a href="qiye2.html?id=10216">其他产品岗位</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="exist">
+                            <span>市场</span>
+                            <a href="qiye2.html?id=10301">市场营销</a>
+                            <a href="qiye2.html?id=10302">市场推广</a>
+                            <a href="qiye2.html?id=10303">品牌公关</a>
+                            <div class="iconfont">&#xe637;</div>
+                        </div>
+                        <div class="hide hide3">
+                            <div class="title">
+                                <span>市场</span>
+                            </div>
+                            <div class="box">
+                                <div class="concent">
+                                    <div>
+                                        <div class="small-title">政府事务</div>
+                                        <div>
+                                            <a href="qiye2.html?id=10304">社工</a>
+                                            <a href="qiye2.html?id=10305">政府关系</a>
+                                            <a href="qiye2.html?id=10306">政策研究</a>
+                                            <a href="qiye2.html?id10307=">企业党建</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="concent">
+                                    <div>
+                                        <div class="small-title">市场/营销</div>
+                                        <div>
+                                            <a href="qiye2.html?id=10308">信息流优化师</a>
+                                            <a href="qiye2.html?id=10309">网络推广</a>
+                                            <a href="qiye2.html?id=10310">市场营销</a>
+                                            <a href="qiye2.html?id=10311">市场顾问</a>
+                                            <a href="qiye2.html?id=10312">市场推广</a>
+                                            <a href="qiye2.html?id=10313">SEO</a>
+                                            <a href="qiye2.html?id=10314">SEM</a>
+                                            <a href="qiye2.html?id=10315">商务渠道</a>
+                                            <a href="qiye2.html?id=10316">商业数据分析</a>
+                                            <a href="qiye2.html?id=10317">活动策划</a>
+                                            <a href="qiye2.html?id=10318">网络营销</a>
+                                            <a href="qiye2.html?id=10319">海外市场</a>
+                                            <a href="qiye2.html?id=10320">APP推广</a>
+                                            <a href="qiye2.html?id=10321">选址开发</a>
+                                            <a href="qiye2.html?id=10322">游戏推广</a>
+                                            <a href="qiye2.html?id=10323">营销主管</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="concent">
+                                    <div>
+                                        <div class="small-title">公关媒介</div>
+                                        <div>
+                                            <a href="qiye2.html?id=10324">公关媒介</a>
+                                            <a href="qiye2.html?id=10325">媒介经理</a>
+                                            <a href="qiye2.html?id=10326">广告客户执行</a>
+                                            <a href="qiye2.html?id=10327">品牌公关</a>
+                                            <a href="qiye2.html?id=10328">媒介专员</a>
+                                            <a href="qiye2.html?id=10329">活动决策执行</a>
+                                            <a href="qiye2.html?id=10330">媒介策划</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="concent">
+                                    <div>
+                                        <div class="small-title">会务会展</div>
+                                        <div>
+                                            <a href="qiye2.html?id=10331">会务会展</a>
+                                            <a href="qiye2.html?id=10332">会议活动策划</a>
+                                            <a href="qiye2.html?id=10333">会议活动执行</a>
+                                            <a href="qiye2.html?id=10334">会展活动策划</a>
+                                            <a href="qiye2.html?id=10335">会展活动执行</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="concent">
+                                    <div>
+                                        <div class="small-title">广告</div>
+                                        <div>
+                                            <a href="qiye2.html?id=10336">广告</a>
+                                            <a href="qiye2.html?id=10337">广告/会展项目经理</a>
+                                            <a href="qiye2.html?id=10338">广告创意设计</a>
+                                            <a href="qiye2.html?id=10339">美术指导</a>
+                                            <a href="qiye2.html?id=10340">广告设计</a>
+                                            <a href="qiye2.html?id=10341">策划经理</a>
+                                            <a href="qiye2.html?id=10342">广告文案</a>
+                                            <a href="qiye2.html?id=10343">广告制作</a>
+                                            <a href="qiye2.html?id=10344">媒介投放</a>
+                                            <a href="qiye2.html?id=10345">媒介合作</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="concent last">
+                                    <div>
+                                        <div class="small-title">其他市场职位</div>
+                                        <div>
+                                            <a href="qiye2.html?id=10346">其他市场职位</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="exist">
+                            <span>技术</span>
+                            <a href="qiye2.html?id=10401">Java</a>
+                            <a href="qiye2.html?id=10402">PHP</a>
+                            <a href="qiye2.html?id=10403">前端开发工程师</a>
+                            <div class="iconfont">&#xe637;</div>
+                        </div>
+                        <div class="hide hide4">
+                            <div class="title">
+                                <span>技术</span>
+                            </div>
+                            <div class="box">
+                                <div class="concent">
+                                    <div>
+                                        <div class="small-title">后端开发</div>
+                                        <div>
+                                            <a href="qiye2.html?id=10404">Java</a>
+                                            <a href="qiye2.html?id=10405">C++</a>
+                                            <a href="qiye2.html?id=10406">PHP</a>
+                                            <a href="qiye2.html?id=10407">C</a>
+                                            <a href="qiye2.html?id=10408">C#</a>
+                                            <a href="qiye2.html?id=10409">.NET</a>
+                                            <a href="qiye2.html?id=10410">Hadoop</a>
+                                            <a href="qiye2.html?id=10411">Python</a>
+                                            <a href="qiye2.html?id=10412">Delphi</a>
+                                            <a href="qiye2.html?id=10413">VB</a>
+                                            <a href="qiye2.html?id=10414">Perl</a>
+                                            <a href="qiye2.html?id=10415">Ruby</a>
+                                            <a href="qiye2.html?id=10416">Node.js</a>
+                                            <a href="qiye2.html?id=10417">Golang</a>
+                                            <a href="qiye2.html?id=10418">Erlang</a>
+                                            <a href="qiye2.html?id=10419">语音/视频/图形开发</a>
+                                            <a href="qiye2.html?id=10420">数据采集</a>
+                                            <a href="qiye2.html?id=10421">全栈工程师</a>
+                                            <a href="qiye2.html?id=10422">GIS工程师</a>
+                                            <a href="qiye2.html?id=10423">后端开发</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="concent">
+                                    <div>
+                                        <div class="small-title">移动开发</div>
+                                        <div>
+                                            <a href="qiye2.html?id=10424">技术美工</a>
+                                            <a href="qiye2.html?id=10425">Android</a>
+                                            <a href="qiye2.html?id=10426">iOS</a>
+                                            <a href="qiye2.html?id=10427">Flash开发</a>
+                                            <a href="qiye2.html?id=10428">JavaScript</a>
+                                            <a href="qiye2.html?id=10429">U3D</a>
+                                            <a href="qiye2.html?id=10430">Cocos</a>
+                                            <a href="qiye2.html?id=10431">UE4</a>
+                                            <a href="qiye2.html?id=10432">移动开发</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="concent">
+                                    <div>
+                                        <div class="small-title">测试</div>
+                                        <div>
+                                            <a href="qiye2.html?id=10433">测试工程师</a>
+                                            <a href="qiye2.html?id=10434">自动化测试</a>
+                                            <a href="qiye2.html?id=10435">功能测试</a>
+                                            <a href="qiye2.html?id=10436">性能测试</a>
+                                            <a href="qiye2.html?id=10437">移动端测试</a>
+                                            <a href="qiye2.html?id=10438">游戏测试</a>
+                                            <a href="qiye2.html?id=10439">硬件测试</a>
+                                            <a href="qiye2.html?id=10440">软件测试</a>
+                                            <a href="qiye2.html?id=10441">渗透测试</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="concent last">
+                                    <div>
+                                        <div class="small-title">运维/技术支持</div>
+                                        <div>
+                                            <a href="qiye2.html?id=10442">技术文档工程员</a>
+                                            <a href="qiye2.html?id=10443">运维工程师</a>
+                                            <a href="qiye2.html?id=10444">运维开发工程师</a>
+                                            <a href="qiye2.html?id=10445">网络工程师</a>
+                                            <a href="qiye2.html?id=10446">系统工程师</a>
+                                            <a href="qiye2.html?id=10447">IT技术支持</a>
+                                            <a href="qiye2.html?id=10448">系统管理员</a>
+                                            <a href="qiye2.html?id=10449">网络安全</a>
+                                            <a href="qiye2.html?id=10450">系统安源</a>
+                                            <a href="qiye2.html?id=10451">DBA</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="exist">
+                            <span>销售</span>
+                            <a href="qiye2.html?id=10501">销售专员</a>
+                            <a href="qiye2.html?id=10502">销售经理</a>
+                            <a href="qiye2.html?id=10503">销售工程师</a>
+                            <div class="iconfont">&#xe637;</div>
+                        </div>
+                        <div class="hide hide5">
+                            <div class="title">
+                                <span>销售</span>
+                            </div>
+                            <div class="box">
+                                <div class="concent">
+                                    <div>
+                                        <div class="small-title">销售行政/商务</div>
+                                        <div>
+                                            <a href="qiye2.html?id=10504">商务专员</a>
+                                            <a href="qiye2.html?id=10505">商务经理</a>
+                                            <a href="qiye2.html?id=10506">销售助理</a>
+                                            <a href="qiye2.html?id=10507">商务总监</a>
+                                            <a href="qiye2.html?id=10508">销售运营</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="concent">
+                                    <div>
+                                        <div class="small-title">房地产销售/招商</div>
+                                        <div>
+                                            <a href="qiye2.html?id=10509">置业顾问</a>
+                                            <a href="qiye2.html?id=10510">地产中介</a>
+                                            <a href="qiye2.html?id=10511">房地产销售/招商</a>
+                                            <a href="qiye2.html?id=10512">物业招商</a>
+                                            <a href="qiye2.html?id=10513">房地产销售总监</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="concent">
+                                    <div>
+                                        <div class="small-title">服务业销售</div>
+                                        <div>
+                                            <a href="qiye2.html?id=10514">服装导购</a>
+                                            <a href="qiye2.html?id=10515">化妆品导购</a>
+                                            <a href="qiye2.html?id=10516">美容顾问</a>
+                                            <a href="qiye2.html?id=10517">会籍顾问</a>
+                                            <a href="qiye2.html?id=10518">珠宝销售</a>
+                                            <a href="qiye2.html?id=10519">旅游顾问</a>
+                                            <a href="qiye2.html?id=10520">瘦身顾问</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="concent">
+                                    <div>
+                                        <div class="small-title">汽车销售</div>
+                                        <div>
+                                            <a href="qiye2.html?id=10521">汽车销售</a>
+                                            <a href="qiye2.html?id=10522">汽车配件销售</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="concent">
+                                    <div>
+                                        <div class="small-title">广告/会展销售</div>
+                                        <div>
+                                            <a href="qiye2.html?id=10523">广告销售</a>
+                                            <a href="qiye2.html?id=10524">会议活动销售</a>
+                                            <a href="qiye2.html?id=10525">会展活动销售</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="concent last">
+                                    <div>
+                                        <div class="small-title">金融销售</div>
+                                        <div>
+                                            <a href="qiye2.html?id=10526">证券经纪人</a>
+                                            <a href="qiye2.html?id=10527">信用卡销售</a>
+                                            <a href="qiye2.html?id=10528">保险顾问</a>
+                                            <a href="qiye2.html?id=10529">理财顾问</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="exist">
+                            <span>生产制造</span>
+                            <a href="qiye2.html?id=10601">生产总监</a>
+                            <a href="qiye2.html?id=10602">生产员</a>
+                            <a href="qiye2.html?id=10603">质量管理/测试</a>
+                            <div class="iconfont">&#xe637;</div>
+                        </div>
+                        <div class="hide hide6">
+                            <div class="title">
+                                <span>生产制造</span>
+                            </div>
+                            <div class="box">
+                                <div class="concent">
+                                    <div>
+                                        <div class="small-title">环保</div>
+                                        <div>
+                                            <a href="qiye2.html?id=10604">环保工程师</a>
+                                            <a href="qiye2.html?id=10605">环评工程师</a>
+                                            <a href="qiye2.html?id=10606">EHS工程师</a>
+                                            <a href="qiye2.html?id=10607">碳排放工程师</a>
+                                            <a href="qiye2.html?id=10608">环境检测员</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="concent">
+                                    <div>
+                                        <div class="small-title">能源/地质</div>
+                                        <div>
+                                            <a href="qiye2.html?id=10609">地质工程师</a>
+                                            <a href="qiye2.html?id=10610">光伏系统工程师</a>
+                                            <a href="qiye2.html?id=10611">风电运维工程师</a>
+                                            <a href="qiye2.html?id=10612">水利工程师</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="concent">
+                                    <div>
+                                        <div class="small-title">生产运营</div>
+                                        <div>
+                                            <a href="qiye2.html?id=10613">厂务</a>
+                                            <a href="qiye2.html?id=10614">生产运营</a>
+                                            <a href="qiye2.html?id=10615">厂长</a>
+                                            <a href="qiye2.html?id=10616">生产总监</a>
+                                            <a href="qiye2.html?id=10617">车间主任</a>
+                                            <a href="qiye2.html?id=10618">生产组长/拉长</a>
+                                            <a href="qiye2.html?id=10619">生产设备管理员</a>
+                                            <a href="qiye2.html?id=10620">生产计划/物料管理（PMC）</a>
+                                            <a href="qiye2.html?id=10621">生产文员</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="concent">
+                                    <div>
+                                        <div class="small-title">质量安全</div>
+                                        <div>
+                                            <a href="qiye2.html?id=10622">质检员</a>
+                                            <a href="qiye2.html?id=10623">计量工程师</a>
+                                            <a href="qiye2.html?id=10624">安全评价师</a>
+                                            <a href="qiye2.html?id=10625">网络工程师</a>
+                                            <a href="qiye2.html?id=10626">质量管理/测试</a>
+                                            <a href="qiye2.html?id=10627">可靠度工程师</a>
+                                            <a href="qiye2.html?id=10628">失效分析工程师</a>
+                                            <a href="qiye2.html?id=10629">生产认证工程师</a>
+                                            <a href="qiye2.html?id=10630">体系工程师</a>
+                                            <a href="qiye2.html?id=10631">体系审核员</a>
+                                            <a href="qiye2.html?id=10632">生产安全员</a>
+                                            <a href="qiye2.html?id=10633">汽车质量工程师</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="concent last">
+                                    <div>
+                                        <div class="small-title">汽车制造</div>
+                                        <div>
+                                            <a href="qiye2.html?id=10634">汽车设计</a>
+                                            <a href="qiye2.html?id=10635">车身/造型设计</a>
+                                            <a href="qiye2.html?id=10636">底盘工程师</a>
+                                            <a href="qiye2.html?id=10637">动力系统工程师</a>
+                                            <a href="qiye2.html?id=10638">汽车电子工程师</a>
+                                            <a href="qiye2.html?id=10639">汽车零部件设计</a>
+                                            <a href="qiye2.html?id=10640">汽车项目管理</a>
+                                            <a href="qiye2.html?id=10641">内外饰设计工程师</a>
+                                            <a href="qiye2.html?id=10642">总装工程师</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="exist">
+                            <span>服务业</span>
+                            <a href="qiye2.html?id=10701">服务员</a>
+                            <a href="qiye2.html?id=10702">客房服务员</a>
+                            <a href="qiye2.html?id=10703">发型师</a>
+                            <div class="iconfont">&#xe637;</div>
+                        </div>
+                        <div class="hide hide7">
+                            <div class="title">
+                                <span>服务业</span>
+                            </div>
+                            <div class="box">
+                                <div class="concent">
+                                    <div>
+                                        <div class="small-title">餐饮</div>
+                                        <div>
+                                            <a href="qiye2.html?id=10704">奶茶店店员</a>
+                                            <a href="qiye2.html?id=10705">水台</a>
+                                            <a href="qiye2.html?id=10706">面包/烘培师</a>
+                                            <a href="qiye2.html?id=10707">餐饮储备店长/干部</a>
+                                            <a href="qiye2.html?id=10708">调酒师</a>
+                                            <a href="qiye2.html?id=10709">餐饮</a>
+                                            <a href="qiye2.html?id=10710">后厨</a>
+                                            <a href="qiye2.html?id=10711">配菜打荷</a>
+                                            <a href="qiye2.html?id=10712">茶艺师</a>
+                                            <a href="qiye2.html?id=10713">蛋糕/裱花师</a>
+                                            <a href="qiye2.html?id=10714">餐饮学徒</a>
+                                            <a href="qiye2.html?id=10715">面点师</a>
+                                            <a href="qiye2.html?id=10716">行政总厨</a>
+                                            <a href="qiye2.html?id=10717">厨师长</a>
+                                            <a href="qiye2.html?id=10718">传菜员</a>
+                                            <a href="qiye2.html?id=10719">洗碗工</a>
+                                            <a href="qiye2.html?id=10720">凉菜厨师</a>
+                                            <a href="qiye2.html?id=10721">中餐厨师</a>
+                                            <a href="qiye2.html?id=10722">西餐厨师</a>
+                                            <a href="qiye2.html?id=10723">日料厨师</a>
+                                            <a href="qiye2.html?id=10724">烧烤师傅</a>
+                                            <a href="qiye2.html?id=10725">收银</a>
+                                            <a href="qiye2.html?id=10726">服务员</a>
+                                            <a href="qiye2.html?id=10727">厨师</a>
+                                            <a href="qiye2.html?id=10728">咖啡师</a>
+                                            <a href="qiye2.html?id=10729">送餐员</a>
+                                            <a href="qiye2.html?id=10730">餐饮店长</a>
+                                            <a href="qiye2.html?id=10731">前台经理/领班</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="concent">
+                                    <div>
+                                        <div class="small-title">酒店</div>
+                                        <div>
+                                            <a href="qiye2.html?id=10732">民宿管家</a>
+                                            <a href="qiye2.html?id=10733">利益/迎宾/接待</a>
+                                            <a href="qiye2.html?id=10734">酒店前厅经理</a>
+                                            <a href="qiye2.html?id=10735">客房经理</a>
+                                            <a href="qiye2.html?id=10736">酒店前台</a>
+                                            <a href="qiye2.html?id=10737">客房服务员</a>
+                                            <a href="qiye2.html?id=10738">酒店经理</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="concent">
+                                    <div>
+                                        <div class="small-title">零售</div>
+                                        <div>
+                                            <a href="qiye2.html?id=10739">督导/寻店</a>
+                                            <a href="qiye2.html?id=10740">陈列员</a>
+                                            <a href="qiye2.html?id=10741">理货员</a>
+                                            <a href="qiye2.html?id=10742">防损员</a>
+                                            <a href="qiye2.html?id=10743">卖场经理</a>
+                                            <a href="qiye2.html?id=10744">促销员</a>
+                                            <a href="qiye2.html?id=10745">导购</a>
+                                            <a href="qiye2.html?id=10746">店员/营业员</a>
+                                            <a href="qiye2.html?id=10747">门店店长</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="concent last">
+                                    <div>
+                                        <div class="small-title">美容保健</div>
+                                        <div>
+                                            <a href="qiye2.html?id=10748">纹绣师</a>
+                                            <a href="qiye2.html?id=10749">美体师</a>
+                                            <a href="qiye2.html?id=10750">美发助理/学徒</a>
+                                            <a href="qiye2.html?id=10751">美容店长</a>
+                                            <a href="qiye2.html?id=10752">足疗师</a>
+                                            <a href="qiye2.html?id=10753">IT技术支持</a>
+                                            <a href="qiye2.html?id=10754">按摩师</a>
+                                            <a href="qiye2.html?id=10755">美睫师</a>
+                                            <a href="qiye2.html?id=10756">采耳师</a>
+                                            <a href="qiye2.html?id=10757">发型师</a>
+                                            <a href="qiye2.html?id=10758">美甲师</a>
+                                            <a href="qiye2.html?id=10759">化妆师</a>
+                                            <a href="qiye2.html?id=10760">养发师</a>
+                                            <a href="qiye2.html?id=10761">理广师</a>
+                                            <a href="qiye2.html?id=10762">针灸推拿</a>
+                                            <a href="qiye2.html?id=10763">美容师</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="exist">
+                            <span>旅游</span>
+                            <a href="qiye2.html?id=10801">旅游顾问</a>
+                            <a href="qiye2.html?id=10802">导游</a>
+                            <a href="qiye2.html?id10803=">旅游产品开发/策划</a>
+                            <div class="iconfont">&#xe637;</div>
+                        </div>
+                        <div class="hide hide8">
+                            <div class="title">
+                                <span>旅游</span>
+                            </div>
+                            <div class="box">
+                                <div class="concent">
+                                    <div>
+                                        <div class="small-title">旅游服务</div>
+                                        <div>
+                                            <a href="qiye2.html?id=10804">旅游服务</a>
+                                            <a href="qiye2.html?id=10805">计调</a>
+                                            <a href="qiye2.html?id=10806">签证专员</a>
+                                            <a href="qiye2.html?id=10807">导游</a>
+                                            <a href="qiye2.html?id=10808">预定票务</a>
+                                            <a href="qiye2.html?id=10809">讲解员</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="concent">
+                                    <div>
+                                        <div class="small-title">旅游产品开发/策划</div>
+                                        <div>
+                                            <a href="qiye2.html?id=10810">旅游产品开发/策划</a>
+                                            <a href="qiye2.html?id=10811">旅游产品经理</a>
+                                            <a href="qiye2.html?id=10812">旅游策划师</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="concent last">
+                                    <div>
+                                        <div class="small-title">其他旅游职位</div>
+                                        <div>
+                                            <a href="qiye2.html?id=10813">其他旅游职位</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="exist">
+                            <span>供应链/物流</span>
+                            <a href="qiye2.html?id=10901">物流专员</a>
+                            <a href="qiye2.html?id=10902">贸易跟单</a>
+                            <a href="qiye2.html?id=10903">供应链经理</a>
+                            <div class="iconfont">&#xe637;</div>
+                        </div>
+                        <div class="hide hide9">
+                            <div class="title">
+                                <span>供应链</span>
+                            </div>
+                            <div class="box">
+                                <div class="concent">
+                                    <div>
+                                        <div class="small-title">物流</div>
+                                        <div>
+                                            <a href="qiye2.html?id=10904">配送站长</a>
+                                            <a href="qiye2.html?id=10905">物流</a>
+                                            <a href="qiye2.html?id=10906">供应链专员</a>
+                                            <a href="qiye2.html?id=10907">供应链经理</a>
+                                            <a href="qiye2.html?id=10908">集装箱管理</a>
+                                            <a href="qiye2.html?id=10909">物流专员</a>
+                                            <a href="qiye2.html?id=10910">物流经理</a>
+                                            <a href="qiye2.html?id=10911">物流运营</a>
+                                            <a href="qiye2.html?id=10912">物流跟单</a>
+                                            <a href="qiye2.html?id=10913">调度员</a>
+                                            <a href="qiye2.html?id=10914">物流/仓储项目经理</a>
+                                            <a href="qiye2.html?id=10915">货运代理专员</a>
+                                            <a href="qiye2.html?id=10916">货运代理经理</a>
+                                            <a href="qiye2.html?id=10917">水/空/陆运操作</a>
+                                            <a href="qiye2.html?id=10918">核销员</a>
+                                            <a href="qiye2.html?id=10919">Cocos</a>
+                                            <a href="qiye2.html?id=10920">UE4</a>
+                                            <a href="qiye2.html?id=10921">移动开发</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="concent">
+                                    <div>
+                                        <div class="small-title">仓储</div>
+                                        <div>
+                                            <a href="qiye2.html?id=10922">仓储</a>
+                                            <a href="qiye2.html?id=10923">仓库经理</a>
+                                            <a href="qiye2.html?id=10924">仓库管理员</a>
+                                            <a href="qiye2.html?id=10925">仓库文员</a>
+                                            <a href="qiye2.html?id=10926">配/理/拣/发货</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="concent">
+                                    <div>
+                                        <div class="small-title">交通/运输</div>
+                                        <div>
+                                            <a href="qiye2.html?id=10927">无人机飞手</a>
+                                            <a href="qiye2.html?id=10928">交通/运输</a>
+                                            <a href="qiye2.html?id=10929">商务司机</a>
+                                            <a href="qiye2.html?id=10930">网约车司机</a>
+                                            <a href="qiye2.html?id=10931">代驾司机</a>
+                                            <a href="qiye2.html?id=10932">驾校教练</a>
+                                            <a href="qiye2.html?id=10933">货运司机</a>
+                                            <a href="qiye2.html?id=10934">配送员</a>
+                                            <a href="qiye2.html?id=10935">快递员</a>
+                                            <a href="qiye2.html?id=10936">运输经理/主管</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="concent last">
+                                    <div>
+                                        <div class="small-title">其他供应链职位</div>
+                                        <div>
+                                            <a href="qiye2.html?id=10937">其他供应链职位</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="exist">
+                            <span>采购/贸易</span>
+                            <a href="qiye2.html?id=11001">采购经理/主管</a>
+                            <a href="qiye2.html?id=11002">采购主管</a>
+                            <div class="iconfont">&#xe637;</div>
+                        </div>
+                        <div class="hide hide13">
+                            <div class="title">
+                                <span>采购贸易</span>
+                            </div>
+                            <div class="box">
+                                <div class="concent">
+                                    <div>
+                                        <div class="small-title">采贸</div>
+                                        <div>
+                                            <a href="qiye2.html?id=11003">招标专员</a>
+                                            <a href="qiye2.html?id=11004">投标专员</a>
+                                            <a href="qiye2.html?id=11005">采购</a>
+                                            <a href="qiye2.html?id=11006">商品经理</a>
+                                            <a href="qiye2.html?id=11007">供应商质量工程师</a>
+                                            <a href="qiye2.html?id=11008">采购总监</a>
+                                            <a href="qiye2.html?id=11009">采购经理/主管</a>
+                                            <a href="qiye2.html?id=11010">采购专员/助理</a>
+                                            <a href="qiye2.html?id=11011">买手</a>
+                                            <a href="qiye2.html?id=11012">采购工程师</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="concent">
+                                    <div>
+                                        <div class="small-title">进出口贸易</div>
+                                        <div>
+                                            <a href="qiye2.html?id=11013">进出口贸易</a>
+                                            <a href="qiye2.html?id=11014">贸易跟单</a>
+                                            <a href="qiye2.html?id=11015">报关/报检员</a>
+                                            <a href="qiye2.html?id=11016">单证员</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="concent last">
+                                    <div>
+                                        <div class="small-title">其他采购/贸易职位</div>
+                                        <div>
+                                            <a href="qiye2.html?id=11017">其他采购/贸易职位</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="more">
+                            <a href="#"><span class="iconfont">更多&#xe637;</span></a>
+                        </div>
+                    </li>
+                </ul>
+                <div class="num"></div>
+            </div>
+            <div class="box2">
+                <input type="radio" name="button" value="0" id="button1" checked hidden>
+                <label for="button1"></label>
+
+                <input type="radio" name="button" value="1" id="button2" hidden>
+                <label for="button2"></label>
+
+                <input type="radio" name="button" value="1" id="button3" hidden>
+                <label for="button3"></label>
+
+                <ul>
+                    <li>
+                        <img src="images/qiye1.png" alt="">
+                    </li>
+                    <li>
+                        <img src="images/qiye2.jpg" alt="">
+                    </li>
+                    <li>
+                        <img src="images/qiye3.jpg" alt="">
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="tag">
+            <div class="iconfont"><a href="wangke1.html">网课推荐&#xe637;</a></div>
+        </div>
+        <div class="wangke"></div>
+        <div class="tag">
+            <div class="iconfont"><a href="tushuguan1.html">图书推荐&#xe637;</a></div>
+        </div>
+        <div class="book"></div>
+    </div>
+</div>
+<script src="js/style.js"></script>
+</body>
+
+</html>

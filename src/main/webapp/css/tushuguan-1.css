@@ -1,0 +1,185 @@
+.bo2 a {
+  font-size: smaller;
+}
+.page{
+    margin-top: 80px;
+    background-color: #e8ebee;
+}
+.box1{
+   height: 40px;
+   width:980px;
+   margin: auto;
+}
+.box2{
+    height: 500px;
+    width: 980px;
+    margin: auto;
+}
+.box3{
+   height: 500px;
+   width: 590px;
+   background-color: #fff;
+   border:2px solid #fff;
+   float: left;
+}
+.box4{
+    height: 500px;
+    width: 370px;
+    float:right;
+}
+.box4 p{
+    padding-top: 5px;
+    padding-left: 10px;
+    font-size: larger;
+}
+.box4 a{
+       text-decoration: none;
+       color: rgb(126, 128, 132);    
+}
+.tips>div{
+    line-height: 30px;
+    height: 33px;
+    border-bottom: 1px solid rgb(126, 128, 132,0.3);
+    padding-top: 5.5px;
+    padding-left: 20px;
+} 
+.tank{
+    margin-top: 13px;
+    background-color: #fff;
+}
+.tips{
+    background-color: #fff;
+}
+.box6{
+    width: 980px;
+    height: 540px;
+    background-color:#fff;
+    margin: auto;
+    margin-top: 30px;
+    border: 2px solid #fff;
+}
+   
+.box1>a{
+    height: 30px;
+    color: #000;
+    float: left;
+    line-height: 20px;
+    padding: 10px;
+    font-size: 20px;
+    text-align: center;
+    margin-right: 8px;
+}
+.bo1{
+    width: 590px;
+    height: 30px;
+    background-color: #fff;
+}
+.bo1>p{
+    font-size: 20px;
+    line-height: 30px;
+    margin-top: 0%;
+    margin-left: 10px;
+}
+.bo2{
+    width: 370px;
+    height: 30px;
+    background-color: #fff;
+}
+.bo2>p{
+    font-size: 20px;
+    line-height: 30px;
+    margin-top: 0%;
+}
+.bo3{
+    width: 980px;
+    height: 30px;
+    background-color:#fff;
+    margin-top: 10px;
+    float: left;
+    margin-top: 0%;
+}
+.bo3>p{
+    font-size: 20px;
+    line-height: 15px;
+    text-align: left;
+    margin-top: 1.5%;
+    margin-left: 10px;
+}
+.kuang{
+    float: left;
+    margin-left: 20px;
+    margin-top: 10px;
+}
+.kuang1{
+    margin-left: 40px;
+    margin-top: 10px;
+    float: left;
+}
+.kuang3{
+    float: left;
+    margin-left: 40px;
+    margin-top: 10px;
+}
+.kuang4{
+    margin-left: 65px;
+    margin-top: 10px;
+    float: left;
+}
+.one h5{
+    height: 20px;
+    padding-top: 4.3px;
+    text-align: center;
+}
+.tow h5{
+    text-align: center;
+    padding-left: 15px;
+}
+.box3 img{
+    width: 158px;
+    height: 186px;
+}
+.box6 img{
+    width: 158px;
+    height: 186px;
+    margin-top: 15px;
+    margin-left: 20px;
+}
+.type{
+    display:flex;
+    justify-content: space-around;
+    line-height: 50px;
+    font-size: larger;
+}
+.type div{
+    padding:0 40px ;
+}
+.type a{
+    color: black;   
+}
+.type a:hover{
+    color: #e8ebee;
+    background-color: #1989e5;
+    font-weight: 550;
+    transition: 0.1s;
+}
+.box5 a{
+    display: flex;
+    justify-content: space-between;
+    line-height: 33px;
+    border-bottom: 1px solid rgb(126, 128, 132,0.3);
+    padding-top: 5.5px;
+}
+.box5 p{
+    padding: 0 10px;
+    font-size: 13px;
+}
+.box5>a:last-child{
+    border-bottom: none;
+}
+body h5{
+    width: 160px;
+    overflow: hidden;
+}
+#bottom{
+    height: 30px;
+}

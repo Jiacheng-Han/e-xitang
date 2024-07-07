@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>e习堂</title>
+    <!-- 下面做这个是小图标 -->
+    <link rel="icon" href="images/2.ico">
+    <link rel="stylesheet" href="qiye/iconfont.css">
+    <link rel="stylesheet" href="css/web-bar.css">
+    <link rel="stylesheet" href="css/qiye2.css">
+    <script src="js/userName.js"></script>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function () {
+            var url = window.location.href;
+            //按照=拆分会查分出两部分，最后一部分就是id
+            var str = url.split("=");
+            var id = parseInt(str[1]);
+            console.log(id);
+            $.ajax({
+                url: '/e_xitang/companies_message?id='+id,
+                type: 'post',
+                success: function (data) {
+                    var result = eval("(" + data + ")");
+                    for (var i = 0; i < result.data.length; i++) {
+                        $(".left").append('<div class="company">\n' +
+                            '                    <a href="qiye3.html?id=' + result.data[i].id + '">\n' +
+                            '                        <div class="box5">\n' +
+                            '                            <div class="box1">\n' +
+                            '                                <div class="box2">\n' +
+                            '                                    <div class="job-name">\n' +
+                                                                  result.data[i].job + '\n' +
+                            '                                    </div>\n' +
+                            '                                    <div class="area">\n' +
+                            '                                        <' + result.data[i].place + '>\n' +
+                            '                                    </div>\n' +
+                            '                                </div>\n' +
+                            '                                <div class="box3">\n' +
+                            '                                    <div class="salar">' + result.data[i].salary + '</div>\n' +
+                            '                                    <div class="require">' + result.data[i].requirement + '</div>\n' +
+                            '                                </div>\n' +
+                            '                            </div>\n' +
+                            '                            <div class="box4">\n' +
+                            '                                <div class="pic">\n' +
+                            '                                   <img src="companylogo\\' + result.data[i].id + '.jpg" alt="" onerror="this.src=\'companylogo/c36e7467c55e24c47c577d21774fe34.png\'">'+
+                            '                                </div>\n' +
+                            '                                <div class="name">\n' +
+                            '                                    <div class="company-name">' + result.data[i].companyName + '</div>\n' +
+                            '                                    <div class="introduction introduction' + i +'"></div>\n' +
+                            '                                </div>\n' +
+                            '                            </div>\n' +
+                            '                        </div>\n' +
+                            '                        <div class="box6">\n' +
+                            '                            <div class="major major'+ i + '"></div>\n' +
+                            '                            <div class="bonus bonus'+ i + '"></div>\n' +
+                            '                        </div>\n' +
+                            '                    </a>\n' +
+                            '                </div>')
+                        for (var j = 0; j < result.data[i].tags.length; j++) {
+                            $(".introduction"+i).append(
+                                '<span>' + result.data[i].tags[j]+ '</span>\n'
+                            )
+                        }
+                        for (var j = 0; j < result.data[i].contents.length; j++) {
+                            $(".major"+i).append(
+                                '<span>' + result.data[i].contents[j]+ '</span>\n'
+                            )
+                        }
+                        for (var j = 0; j < result.data[i].bonus.length; j++) {
+                            $(".bonus"+i).append(
+                                '<span>' + result.data[i].bonus[j]+ '</span>\n'
+                            )
+                        }
+                    }
+                }
+            })
+        })
+    </script>
+    <script>
+        $(function () {
+            var url = window.location.href;
+            //按照=拆分会查分出两部分，最后一部分就是id
+            var str = url.split("=");
+            var id = parseInt(str[1]);
+            console.log(id);
+            $.ajax({
+                url: '/e_xitang/type_message?id='+id,
+                type: 'post',
+                success: function (message) {
+                    var result = eval("(" + message + ")");
+                    $(".type").append(
+                    result.message
+                    )
+                }
+            })
+        })
+    </script>
+</head>
+
+<body>
+<!-- 导航条开始 -->
+<div class="nav">
+    <div class="wrap">
+        <div class="logo"></div>
+        <div id="bar-kong1"></div>
+        <div id="cn">乡村职业教育公益平台</div>
+        <div id="bar-kong2"></div>
+        <div class="nav-bar">
+            <ul>
+                <li><a href="index.html" class="active" onmouseover="tab(0);">首页</a></li>
+                <li><a href="qiye1.html" onmouseover="tab(1);">企业</a></li>
+                <li><a href="wangke1.html" onmouseover="tab(2);">网课</a></li>
+                <li><a href="tushuguan1.html?id=1000" onmouseover="tab(3);">图书</a></li>
+            </ul>
+        </div>
+        <div class="student">
+            <a href="#">
+                <img src="images\touxiang.png" alt="">
+            </a>
+            <div class="inform">
+                <div class="top">
+                    <img src="images\touxiang.png" alt="">
+                    <div class="username" id="user-name-label">
+                        未命名
+                    </div>
+                </div>
+
+                <div class="function">
+                    <a href="#">
+                        <div>学习历史</div>
+                    </a>
+                    <a href="#">
+                        <div>我的信息</div>
+                    </a>
+                    <a href="#">
+                        <div>我的收藏</div>
+                    </a>
+                    <a href="#">
+                        <div>系统通知</div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<!-- 导航条结束 -->
+<!-- 从这里开始写  -->
+<div class="TOP">
+    <div class="head">
+        <a href="qiye1.html">企业</a>
+        <span>></span>
+        <a href="#" class="type"></a>
+        <div style="font-size: 19px;" class="iconfont">&#xe60b;北京</div>
+        <div style="margin-right: 20px;">城市和区域</div>
+    </div>
+</div>
+<div class="down">
+    <div class="content">
+        <div class="left"></div>
+        <div class="right">
+            <div class="ad">
+                <img src="images\ad1.png" alt="">
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 到这里结束  -->
+<script src="js/style.js"></script>
+</body>
+
+</html>

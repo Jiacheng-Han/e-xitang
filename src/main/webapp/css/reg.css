@@ -1,0 +1,48 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #e8ebee;
+}
+
+body,html{
+    height: 100%;
+}
+.reg{
+    width: 35%;
+    height: 30%;
+    background-color: #1989e588;
+    border-radius: 30px;
+    margin:auto;
+    margin-top: 15%;
+}
+.input{
+    padding: 12% 10% 30% 20%;
+    font-size: x-large;
+}
+.input input{
+    font-size: large;
+    margin-bottom: 5%;
+}
+.password{
+    margin-left: 2.3%;
+}
+.btn{
+    margin-top: 5%;
+    margin-left: 32%;
+    width: 18%;
+    height: 35px;
+    border-radius: 10px;
+    border: none;
+}
+.btn:hover{
+    border:1.5px solid;
+    background-color: #e1e0e0;
+    font-weight: 550; 
+}
+.error{
+    margin-left: 31%;
+    font-size: large;
+}

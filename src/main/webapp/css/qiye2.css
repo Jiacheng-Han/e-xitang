@@ -1,0 +1,251 @@
+.TOP{ 
+    margin-top: 70px;
+    background-color: #fff;
+    padding-bottom: 10px;
+}
+.head{
+    margin: auto;
+    width: 70%;
+    line-height: 20px;
+    font-size: 19px;
+    padding-top: 10px;
+    font-weight: 600;
+}
+.head a,
+.head span{
+    color: #888;
+}
+.head>div{
+    float: right;
+    color: #198ae6 ;
+    margin-right: 100px
+}
+.city{
+    width: 70%;
+    margin: auto;
+    margin-top: 15px;
+}
+.city a,
+.city span{
+    font-size: 13px;
+}
+.city a{
+    margin-left: 15px;
+    color: #000;
+}
+.down{
+    height: 120px;
+    background-image: linear-gradient(#198ae64d,#e8ebee);
+}
+.content{
+    width: 70%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+}
+.left{
+    width: 69%;
+}
+.right{
+    position: relative;
+    right: 100px;
+    width: 20.5%;
+    margin-top: 20px;
+}
+.company{
+    margin-top: 20px;
+    width: 99%;
+    height: 120px;
+    border-radius: 10px;
+    background-color: #fff;
+}
+.company>a{
+    color: #000;
+}
+.box1{
+    width: 58%;
+    height: 60%;
+    float: left;
+}
+.box2{
+    height: 30px;
+    padding-top: 16px;
+    padding-left: 10px;
+    font-weight: 600;
+}
+.box3{
+    padding-top: 2px;
+    padding-left: 10px;
+}
+.box4{
+    margin-top: 10px;
+    float: left;
+}
+.box5{
+    height: 70%;
+}
+.box6{
+    border-radius: 0 0 10px 10px;
+    border-top: 1px solid #88888821;
+    height: 30%;
+}
+.box3>div,
+.box2>div{
+    float: left;
+    margin-left: 10px;
+}
+.box4>div{
+    float: left;
+}
+.pic{
+    width: 65px;
+    height: 65px;
+    border-radius: 3px;
+    border: 1px solid #88888835;
+}
+.pic>img{
+    margin-top: 1px;
+    margin-left: 0.5px;
+    width: 65px;
+    height: 65px;
+}
+.name{
+    margin-top: 5px;
+    margin-left: 25px;
+}
+.country{
+    padding: 3px 5px;
+    background-color:rgb(90, 199, 97);
+    border-radius: 12px;
+    color: #fff;
+    font-size: 10px;
+    float: left;
+    margin-right: 10px;
+}
+.name span{
+    padding: 3px 5px;
+    margin-left: 5px;
+    background-color:#4FAFEF;
+    border-radius: 12px;
+    color: #fff;
+    font-size: 10px;
+    float: left;
+}
+.major{
+    float: left;
+    margin-left: 10px;
+    width: 56.8%;
+}
+.major>span{
+    line-height: 35px;
+    margin-left: 10px;
+}
+.bonus{
+    float: left;
+}
+.bonus>span{
+    line-height: 35px;
+    margin-right: 10px;
+}
+.box6 span{
+    font-size: 13.5px;
+}
+.company-name{
+    font-size: 18px;
+    color: #198ae6;
+    margin-left: 6px;
+    margin-bottom: 8px;
+}
+.salary{
+    color: rgb(244, 165, 67);
+}
+.box7{
+    padding-top: 27px;
+    padding-bottom: 40px;
+    background-color: #fff;
+    border-radius: 10px;
+}
+.box7 .avg {
+    cursor: pointer;
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    /* border: 1.7px solid #1989e5; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    background-color: #fff;
+}
+
+/* 头像尺寸 */
+.box7 .avg img {
+    border-radius: 50%;
+    width: 80%;
+    border:  2px outset #88888861;
+}
+
+.box7 .name {
+    margin-top: 10px;
+    line-height: 20px;
+    margin-left: 31.5%;
+    font-size: large;
+    font-weight: 600;
+}
+.else{
+    margin-top: 10px;
+}
+.box7 a{
+    color: #000;
+}
+.jianli{
+    margin-left: 29px;
+}
+.history{
+    margin-left: 10px;
+}
+.chuangye{
+    margin-top: 20px;
+    border-radius: 10px;
+    /* background-color: #198ae6; */
+    border: 2px dashed #198ae6;
+}
+.chuangye a{
+    color: #000;
+    line-height: 40px;
+    font-size: 20px;
+    padding-left: 23.5%;
+}
+.read{
+    margin-top: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    padding-bottom: 5px;
+}
+.read a>li{
+    padding-left: 15px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    line-height: 25px;
+    border-bottom: 1px solid #88888850;
+}
+.read ul>li{
+    padding-left: 15px;
+    padding-top: 8px;
+    padding-bottom: 5px;
+    border-radius: 10px 10px 0 0;
+    background-image: linear-gradient(to right, hsl(207, 80%, 50%, 0.4) , #fff);
+}
+.read a{
+    color: #000;
+}
+.ad{
+    margin-top: 1px;
+    background-color: #198ae6;
+    height: 200px;
+    border-radius: 10px;
+}
+.ad img{
+    width: 100%;
+    border-radius: 10px;
+}

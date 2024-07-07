@@ -1,0 +1,300 @@
+.video {
+    width: 70%;
+    /* background-color: #081a22; */
+    margin-left: 3%;
+    float: left;
+}
+
+.play>p {
+    line-height: 40px;
+    padding-left: 15px;
+    text-align: left;
+    color: rgb(85, 85, 87);
+    font-size: x-large;
+    font-weight: 500;
+    /* margin-bottom: 10px; */
+    background-color: #e8e7e7;
+}
+
+.play {
+    margin-top: 85px;
+}
+
+.play>video {
+    width: 100%;
+}
+
+.select {
+    width: 20%;
+    margin-left: 77%;
+    /* background-color: #1989e5; */
+}
+
+.kuang {
+    height: 850px;
+    /* background-color: #1989e5; */
+}
+
+.kong {
+    height: 15%;
+}
+
+.test {
+    line-height: 100px;
+    background-color: #fff;
+    color: #000;
+    text-align: center;
+    font-size: 40px;
+    height: 100px;
+    border: 5px dashed #1989e5;
+    border-radius: 15px;
+    margin-bottom: 30px;
+    width: 290px;
+}
+
+.xvanji {
+    height: 70%;
+    /* background-color: #2b7c9f; */
+}
+
+/* 设置下拉按钮的样式 */
+.dropbtn {
+    background-color: #1989e5;
+    color: #ffffff;
+    padding: 16px;
+    border: none;
+    cursor: pointer;
+    width: 300px;
+    font-size: large;
+}
+
+/* 容器 <div> - 需要放置下拉内容 */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* 下拉内容（默认隐藏） */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    min-width: 300px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+/* 下拉链接 */
+.dropdown-content a {
+    color: rgb(34, 34, 45);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-size: medium;
+    font-weight: 400;
+    border-bottom: 0.5px solid rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+/* 悬停时更改下拉链接的颜色 */
+.dropdown-content a:hover {
+    background-color: #f1f1f1
+}
+
+/* 悬停时显示下拉菜单 */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* 显示下拉内容时，更改下拉按钮的背景颜色 */
+.dropdown:hover .dropbtn {
+    background-color: #1991f3;
+}
+
+.AD {
+    height: 420px;
+    width: 300px;
+    margin-top: 30px;
+    background-color: #c03030;
+}
+
+.AD img {
+    width: 100%;
+}
+
+.up {
+    height: 800px;
+}
+
+.down {
+    width: 81.5%;
+    margin-left: 1.3%;
+}
+
+.main-idea {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    box-shadow: 0.1px 0.1px 5px #888888;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 15px;
+    margin-top: 15px;
+}
+
+.main-idea>img {
+    border-radius: 50%;
+    width: 100%
+}
+
+.topic {
+    border-left: 3px solid #1989e5;
+    width: 87%;
+    margin-left: 15px;
+    float: left;
+    margin-left: 15px;
+    padding-left: 10px;
+    padding-right: 30px;
+}
+
+.article {
+    width: 100%;
+    height: 60%;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    overflow: auto;
+}
+
+.touxiang {
+    cursor: pointer;
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    box-shadow: 0.1px 0.1px 5px #888888;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 20px;
+    margin-top: 20.2px;
+    float: left;
+}
+
+.touxiang img {
+    border-radius: 50%;
+    width: 100%;
+}
+
+.comment-input {
+    margin-left: 2.49%;
+    float: left;
+    height: 100%;
+    width: 83.35%;
+}
+
+#input {
+    width: 100%;
+    outline: none;
+    border: none;
+    background-color: #feffff;
+    box-shadow: 0px 0px 1.1px #888;
+    font-size: large;
+    font-weight: 550;
+    padding-left: 9.5px;
+    padding-top: 5px;
+    color: #5f5f5f;
+}
+
+#input:hover {
+    background-color: #fff;
+}
+
+#submit {
+    margin-top: 1.5px;
+    margin-left: 93.4%;
+    width: 7%;
+    height: 17.5%;
+    background-color: #fff;
+    box-shadow: 0.1px 0.1px 1.5px #888888;
+}
+
+.your-comment {
+    margin-top: 20px;
+    height: 170px;
+    border: 3px solid #1989e5;
+    width: 86%;
+    margin-bottom: 30px;
+    margin-left: 2%;
+}
+
+.your-comment h5 {
+    text-align: center;
+    font-size: large;
+    font-weight: 360;
+    color: rgb(129, 129, 129);
+}
+
+#submit:hover {
+    background-color: #fff;
+}
+
+.date {
+    margin-left: 20px;
+    text-align: right;
+    height: 21px;
+    border-top: 1px solid #888;
+    color: #888888;
+}
+
+.louzhu {
+    width: 100px;
+    height: 200px;
+    float: left;
+    margin-left: 15px;
+}
+
+/* 帖子 */
+.tiezi {
+    margin: 12px;
+}
+
+/* 帖子那两个字的 */
+.tiezi .tiezi_title {
+    font-size: 36px;
+    color: #1989e5;
+}
+
+/* 每一条帖子外侧的div */
+.tiezi .content {
+    margin: 0 20px;
+}
+
+/* 每条帖子的li */
+.tiezi .content li {
+    cursor: pointer;
+    box-sizing: border-box;
+    border: 3px solid #1989e5;
+    height: 150px;
+    display: flex;
+    margin-top: 20px;
+    width: 90%;
+    background-color: #fff;
+}
+
+/* 第一条帖子上边距20px */
+.tiezi .content li:first-child {
+    margin-top: 20px;
+}
+
+.center ul {
+    padding-bottom: 6%;
+    border-bottom: 2.5px solid #406fcc;
+}
+
+#box {
+    background-color: #fff;
+}
+
+/* 到这里结束 */

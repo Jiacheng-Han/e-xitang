@@ -1,0 +1,392 @@
+.pic{
+    padding-top: 70px;
+    /* background-color: #000; */
+}
+.pic img{
+    width: 100%;
+}
+.content{
+    width: 70%;
+    margin: auto;
+    height: 1200px;
+    background-color: #fff;
+}
+.main{
+    margin: auto;
+    width: 98%;
+    padding-top: 10px;
+}
+.tag{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    height: 50px;
+    border-left: 3px solid #0C4FA4;
+    width: 30%;
+    /* background-image: linear-gradient(to right,#A2E2FC,white); */
+}
+.tag div{
+    line-height: 50px;
+    font-size: 22px;
+    margin-left: 15px;
+}
+.tag div a{
+    color: #0C4FA4;
+}
+.big-box{
+    height: 400px;
+    justify-content: space-between;
+    display: flex;
+}
+.big-box>div{
+    height: 100%;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 1px 1px 1px 1px #ececef;
+}
+.box1{
+    width: 34.5%;
+}
+.box2{
+    width: 64.5%;
+}
+.box1 li{
+    height: 35px;
+    border-bottom: 1px solid #88888846;
+}
+.box1 li:last-child{
+    border: none;
+    text-align: right;
+    margin-right: 30px;
+    line-height: 35px;
+}
+.exist{
+    float: left;
+    width: 100%;
+}
+.exist span,.exist a{
+    line-height: 35px;
+    margin-left: 10px;
+    float: left;
+}
+.exist div{
+    float: right;
+    margin-right: 15px;
+    line-height: 35px;
+    color: #868686;
+}
+.exist span{
+    font-size: medium;
+    font-weight: 550;
+    margin-left: 13px;
+    margin-right: 5px;
+}
+.hide{
+    display: none;
+    background-color: #fff;
+    border-radius: 10px;
+    width: 730px;
+    min-height: 400px;
+    z-index: 1;
+    box-shadow: 1px 1px 1px 1px #ececef;
+}
+.title{
+    height: 35px;
+    border-bottom: 1px solid #88888846;
+}
+.title span{
+    position: relative;
+    right: 415px;
+    bottom: 7px;
+    line-height: 50px;
+    font-size: 18.8px;
+    font-weight: 600;
+}
+.concent>div{
+    min-height: 70px;
+    border-bottom: 1px solid #88888846;
+    justify-content: start;
+    display: flex;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+.small-title{
+    min-width: 70px;
+    margin: 3px 10px 0px 10px;
+    line-height: 20px;
+}
+.concent div div{
+    margin-right: 10px;
+}
+.concent span{
+    background-color: #888;
+    width: 150px;
+    margin-left: 10px;
+    float: left;
+    line-height: 30px;
+}
+.concent a{
+    line-height: 26.5px;
+    margin: 5px 5px 5px 0px;
+}
+.box1 li:hover .hide1{
+    display: block;
+    position: relative;
+    left: 397.5px;
+}
+.box1 li:hover .hide2{
+    display: block;
+    position: relative;
+    left: 397.5px;
+    bottom: 101%;
+}
+.box1 li:hover .hide3{
+    display: block;
+    position: relative;
+    left: 397.5px;
+    bottom: 203%;
+}
+.box1 li:hover .hide4{
+    display: block;
+    position: relative;
+    left: 397.5px;
+    bottom: 305%;
+}
+.box1 li:hover .hide5{
+    display: block;
+    position: relative;
+    left: 397.5px;
+    bottom: 407%;
+}
+.box1 li:hover .hide6{
+    display: block;
+    position: relative;
+    left: 397.5px;
+    bottom: 509%;
+}
+.box1 li:hover .hide7{
+    display: block;
+    position: relative;
+    left: 397.5px;
+    bottom: 611%;
+}
+.box1 li:hover .hide8{
+    display: block;
+    position: relative;
+    left: 397.5px;
+    bottom: 713%;
+}
+.box1 li:hover .hide9{
+    display: block;
+    position: relative;
+    left: 397.5px;
+    bottom: 815%;
+}
+.box1 li:hover .hide10{
+    display: block;
+    position: relative;
+    left: 397.5px;
+    bottom: 817%;
+}
+.box1 li:hover .hide11{
+    display: block;
+    position: relative;
+    left: 397.5px;
+    bottom: 819%;
+}
+.box1 li:hover .hide12{
+    display: block;
+    position: relative;
+    left: 397.5px;
+    bottom: 821%;
+}
+.box1 li:hover .hide13{
+    display: block;
+    position: relative;
+    left: 397.5px;
+    bottom: 917%;
+}
+.box1 li:first-child:hover {
+    width: 110%;
+    border-radius: 10px 0px;
+    background-color:#8888883b;
+}
+.box1 li:hover {
+    width: 110%;
+    background-color:#8888883b;
+}
+.box1 li:last-child:hover{
+    width: 100%;
+    background-color: #fff;
+}
+.box1 li:last-child>div:hover{
+    position: relative;
+    right: 30px;
+}
+.box1 li:hover .exist div{
+    display: none;
+}
+.last>div{
+    border-bottom: none;
+}
+.box1 a{
+    color: #686868;
+}
+.box1 a:hover{
+    text-decoration: underline;
+    color: #1989e5;
+}
+.more{
+    width: 108%;
+    margin-top: 4px;
+}
+.more a{
+    color: #000;
+    padding-right: 15px;
+}
+.more a:hover{
+    padding-right: 18.2px;
+    text-decoration: none;
+    color: #1989e5;
+}
+.box2 {
+    position: relative;
+    text-align: center;
+    font-family: Arial;
+    overflow: hidden;
+}
+
+.box2 ul {
+    padding: 0;
+    width: calc(730px * 3);
+    transition: all .5s;
+    display: flex;
+    justify: start;
+}
+
+.box2 li {
+    width: 730px;
+    height: 720px;
+}
+
+.box2 img{
+    width: 100%;
+    height: 400px;
+}
+
+.box2 input[name="button"] {
+    display: none;
+}
+
+.box2 label[for^="button"] {
+    position: absolute;
+    top: 350px;
+    width: 15px;
+    height: 15px;
+    margin: 0 10px;
+    line-height: 20px;
+    background-color: #fff;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: .3s;
+}
+
+.box2 label[for="button1"] {
+    left: 40%;
+}
+
+.box2 label[for="button2"] {
+    left: 45%;
+}
+
+.box2 label[for="button3"] {
+    left: 50%;
+}
+
+#button1:checked~ul {
+    margin-left: 0;
+}
+
+#button2:checked~ul {
+    margin-left: -730px;
+}
+
+#button3:checked~ul {
+    margin-left: -1460px;
+}
+
+#button1:checked~label[for="button1"] {
+    background: #1989e5;
+}
+
+#button2:checked~label[for="button2"] {
+    background: #1989e5;
+}
+
+#button3:checked~label[for="button3"] {
+    background: #1989e5;
+}
+
+.box3 .avg {
+    margin-top: 60px;
+    cursor: pointer;
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    border: 1.7px solid #1989e5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 40px;
+    margin-bottom: 10px;
+    background-color: #fff;
+}
+
+/* 头像尺寸 */
+.box3 .avg img {
+    width: 80px;
+    height: 80px;
+}
+
+.name {
+    margin-top: 20px;
+    line-height: 20px;
+    margin-left: 62px;
+    font-size: large;
+    font-weight: 600;
+}
+.wangke{
+    display: flex;
+    justify-content: space-between;
+}
+.wangke>div{
+    width: 32.5%;
+}
+.wangke img{
+    width: 100%;
+    height: 250px;
+    border-radius: 10px;
+    box-shadow: 1px 1px 1px 1px #ececef
+}
+.wangke a div{
+    color: #000;
+    line-height: 25px;
+    text-align: center;
+}
+.book{
+    display: flex;
+    justify-content: space-between;
+}
+.book>div{
+    width: 14%;
+    margin-right: 10px;
+}
+.book img{
+    width: 100%;
+    height: 210px;
+    box-shadow: 1px 1px 1px 1px #ececef
+}
+.book a div{
+    color: #000;
+    line-height: 30px;
+    text-align: center;
+}
