@@ -1,4 +1,4 @@
 # e-xitang
-基于协同过滤的产教一体化平台(Industry-education Integration Platform Based On Collaborative Filtering)
+**Industry-education Integration Platform Based on Collaborative Filtering**
 
-该系统的全部代码均写在Windows11下的IntelliJ IDEA中，网页的部署依赖于Tomcat服务器，数据库的选择是MySQL数据库。其中Java版本为1.8.0，Tomcat版本为9.0.74，MySQL版本为8.0。
+All the code for this system was written using IntelliJ IDEA on Windows 11. The web deployment relies on the Tomcat server, and the database used is MySQL. The Java version is 1.8.0, the Tomcat version is 9.0.74, and the MySQL version is 8.0.
